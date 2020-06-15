@@ -32,7 +32,9 @@ This tool lets you import your edited/Vita save file into game's save path.
 ## FAQ
 
 Q: **My save file is a NG+ and the icon is still the first run one.**
+
 A: Sadly it's normal since there's a parameter which is not edited during the import process. That is a WIP.
 
 Q: **I got a Japanese error message on loading the save. What does it mean?**
+
 A: If the Japanese error starts with `リトライポイント` it's mostly due to having a NG+(?) save file without a retry point saved. It's not that important apparently. Just save whenever you can.
