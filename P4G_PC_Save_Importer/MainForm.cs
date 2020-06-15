@@ -135,9 +135,25 @@ namespace P4G_PC_Save_Importer
             }
         }
 
+        /// <summary>
+        /// Opens "About" page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aboutThisToolToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //
+            new AboutForm().Show();
+        }
+
+        /// <summary>
+        /// Opens tutorial page on GitHub
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tutorialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Opens README.md for now
+            System.Diagnostics.Process.Start("https://github.com/RayFirefist/P4G_PC_Save_Importer/blob/master/README.md");
         }
     }
 }
