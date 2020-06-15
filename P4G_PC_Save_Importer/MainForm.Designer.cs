@@ -1,6 +1,6 @@
 ﻿namespace P4G_PC_Save_Importer
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Variabile di progettazione necessaria.

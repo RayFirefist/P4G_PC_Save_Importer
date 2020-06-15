@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace P4G_PC_Save_Importer
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private bool fileOpened { set; get; }
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
