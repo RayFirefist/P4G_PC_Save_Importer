@@ -4,6 +4,9 @@ This tool lets you import your edited/Vita save file into game's save path.
 
 ## How to use
 
+### NOTE: I suggest to use all 16 or as most as possible slots of the game even with dupe save files because at the moment this tool can't create save slots from scratch.
+### NOTE 2: I also suggest to make some backups of your save data before using this tool.
+
 - Press the upper `Select` button for selecting the Steam `remote` path for save data (It should be `%<Your Steam Path>/userdata/<userId>/1113000/remote`. By default the path is `C:\Program Files (x86)\Steam\`)
 - If the path is valid, you should be able to choose the save slots. Otherwise, you should see an error message saying that the chosen path is incorrect.
 - Selected the target slot, choose the source save file with the least `Select` button.
@@ -13,7 +16,7 @@ This tool lets you import your edited/Vita save file into game's save path.
 
 ### Requirements
 
-- PSVita/PSTV with Henkaku (having or not having Enzo is not mandatyory)
+- PSVita/PSTV with Henkaku (having or not having Enzo is not mandatyory) [Tutorial on how to install it](https://vita.hacks.guide/)
 - VitaShell installed into your PSVita
 
 ### Steps
@@ -37,4 +40,8 @@ A: Sadly it's normal since there's a parameter which is not edited during the im
 
 Q: **I got a Japanese error message on loading the save. What does it mean?**
 
-A: If the Japanese error starts with `リトライポイント` it's mostly due to having a NG+(?) save file without a retry point saved. It's not that important apparently. Just save whenever you can.
+A: If the Japanese error starts with `リトライポイント` it's mostly due to having a save file without a retry point saved. It's not that important apparently. Just save whenever you can.
+
+Q: **So, are you really telling me that there's a way to use our PSVita save on PC???**
+
+A: Yes. Just use this tool and you'll see your save data usable on PC. At the moment it was tested with just the US version of PSVita (`PCSE00120`). If something wrong happens, feel free to open an Issue.
