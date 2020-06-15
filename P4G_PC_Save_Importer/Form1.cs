@@ -14,7 +14,6 @@ namespace P4G_PC_Save_Importer
 {
     public partial class Form1 : Form
     {
-
         private bool fileOpened { set; get; }
 
         public Form1()
@@ -134,6 +133,11 @@ namespace P4G_PC_Save_Importer
                     fileOpened = false;
                 }
             }
+        }
+
+        private void aboutThisToolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //
         }
     }
 }

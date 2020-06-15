@@ -12,7 +12,7 @@ namespace P4G_PC_Save_Importer.Utils
         private byte[] contents;
 
         public string originPath { set; get; }
-        public byte[] head { private set; get; } // 0x00 - 0x08 bytes; mostly SAVEDATA0001
+        public byte[] head { private set; get; } // 0x00 - 0x08 bytes; mostly SAVE0001
         public byte[] unknownHash { private set; get; } // 0x08 - 0x18 bytes
         public byte[] saveFileHash { set; get; } // 0x18 - 0x28 bytes
         public byte[] sdSlotData { private set; get; } // 0x28 - EOF bytes

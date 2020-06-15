@@ -152,6 +152,7 @@
             this.aboutThisToolToolStripMenuItem.Name = "aboutThisToolToolStripMenuItem";
             this.aboutThisToolToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.aboutThisToolToolStripMenuItem.Text = "About this tool";
+            this.aboutThisToolToolStripMenuItem.Click += new System.EventHandler(this.aboutThisToolToolStripMenuItem_Click);
             // 
             // tutorialToolStripMenuItem
             // 
