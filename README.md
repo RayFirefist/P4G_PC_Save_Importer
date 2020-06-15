@@ -45,3 +45,8 @@ A: If the Japanese error starts with `リトライポイント` it's mostly due 
 Q: **So, are you really telling me that there's a way to use our PSVita save on PC???**
 
 A: Yes. Just use this tool and you'll see your save data usable on PC. At the moment it was tested with just the US version of PSVita (`PCSE00120`). If something wrong happens, feel free to open an Issue.
+
+## Credits
+
+- lipsum#3832 on Discord for the checksum offsets
+- Atlus, SEGA and the various devs for porting this amazing game on PC.
