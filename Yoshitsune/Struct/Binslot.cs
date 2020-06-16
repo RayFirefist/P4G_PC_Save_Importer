@@ -30,6 +30,8 @@ namespace Yoshitsune.Struct
         /// </summary>
         private byte[] contents;
 
+        public readonly byte[] wtfMagic = { 0x50, 0x34, 0x47, 0x4F, 0x4C, 0x44, 0x45, 0x4E }; // P4GOLDEN
+
         public string originPath { set; get; }
         /// <summary>
         /// 0x00 - 0x08 bytes; fixed to be SAVE0001

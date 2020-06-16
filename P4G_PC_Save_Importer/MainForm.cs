@@ -84,7 +84,7 @@ namespace P4G_PC_Save_Importer
             {
                 var folderName = folderBrowserDialog1.SelectedPath;
 
-                string[] slots = Utils.PathChecker.checkPath(folderName);
+                string[] slots = PathChecker.checkPath(folderName);
 
                 bool valid = false;
 
