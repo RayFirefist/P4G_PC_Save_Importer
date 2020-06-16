@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ookii.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -77,12 +78,15 @@ namespace P4G_PC_Save_Importer
 
         private void btnSelectSavePath_onClick(object sender, EventArgs e)
         {
-            var folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            VistaFolderBrowserDialog dlg = new VistaFolderBrowserDialog();
+            dlg.SelectedPath = @"C:\Program Files (x86)\Steam\userdata\";
+            dlg.ShowNewFolderButton = true;
+
             // Show the FolderBrowserDialog.
-            DialogResult result = folderBrowserDialog1.ShowDialog();
+            DialogResult result = dlg.ShowDialog();
             if (result == DialogResult.OK)
             {
-                var folderName = folderBrowserDialog1.SelectedPath;
+                var folderName = dlg.SelectedPath;
 
                 string[] slots = PathChecker.checkPath(folderName);
 
