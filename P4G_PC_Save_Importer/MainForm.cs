@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Yoshitsune;
+using Yoshitsune.Struct;
+using Yoshitsune.Utils;
 
 namespace P4G_PC_Save_Importer
 {
@@ -51,11 +54,11 @@ namespace P4G_PC_Save_Importer
                 Debug.WriteLine($"Saving to {baseFinalPath}");
 
                 // Pick the binslot first
-                Utils.Binslot binslot = new Utils.Binslot($"{baseFinalPath}slot");
+                Binslot binslot = new Binslot($"{baseFinalPath}slot");
 
                 // Calculating new hash
-                byte[] newHash = Utils.HashMD5.getMd5BytesHash(File.ReadAllBytes(tbxSourceSaveFile.Text));
-                string strHash = Utils.HashMD5.getMd5StringHash(File.ReadAllBytes(tbxSourceSaveFile.Text));
+                byte[] newHash = HashMD5.getMd5BytesHash(File.ReadAllBytes(tbxSourceSaveFile.Text));
+                string strHash = HashMD5.getMd5StringHash(File.ReadAllBytes(tbxSourceSaveFile.Text));
 
                 Debug.WriteLine($"New hash: {strHash}");
 

@@ -14,19 +14,9 @@ namespace P4G_PC_Save_Importer
         [STAThread]
         static void Main(string[] args)
         {
-            Console.WriteLine(args.Length);
-            if (args.Length > 0)
-            {
-                Console.WriteLine("TODO CMD");
-                MessageBox.Show("Todo CMD");
-                Console.ReadKey();
-            }
-            else
-            {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new MainForm());
-            }
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
         }
     }
 }

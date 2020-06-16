@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P4G_PC_Save_Importer.Utils
+namespace Yoshitsune.Utils
 {
     public enum EncodingConvert
     {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 
-namespace P4G_PC_Save_Importer.Utils
+namespace Yoshitsune.Utils
 {
     public class PathChecker
     {
