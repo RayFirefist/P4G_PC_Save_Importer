@@ -1,9 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Yoshitsune.Utils;
 
 namespace Yoshitsune.Struct
 {
@@ -102,6 +99,29 @@ namespace Yoshitsune.Struct
             Array.Copy(this.sdSlotData, 0, output, 8 + 16 + 16, 844);
 
             return output;
+        }
+
+        /// <summary>
+        /// Calculate mystery hash
+        /// </summary>
+        /// <returns>byte array of mystery hash</returns>
+        public byte[] calculateMysteryHash()
+        {
+            byte[] calcluation;
+            //Array.Copy(this.sdSlotData, 0, calcluation, this.wtfMagic.Length, this.sdSlotData.Length);
+            //Array.Copy(this.sdSlotData, 0, calcluation, 0, this.sdSlotData.Length);
+            //Array.Copy(this.wtfMagic, 0, calcluation, 0, this.wtfMagic.Length);
+            //Array.Copy(this.wtfMagic, 0, calcluation, this.sdSlotData.Length, this.wtfMagic.Length);
+
+            MemoryStream ms = new MemoryStream();
+            ms.Write(this.sdSlotData, 0, this.sdSlotData.Length);
+            ms.Write(this.wtfMagic, 0, this.wtfMagic.Length);
+
+            calcluation = ms.ToArray();
+
+            ms.Dispose();
+
+            return HashMD5.getMd5BytesHash(calcluation);
         }
 
         /// <summary>
