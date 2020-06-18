@@ -37,7 +37,7 @@ namespace Yoshitsune.Struct
         /// <summary>
         /// 0x08 - 0x18 bytes; mystery hash
         /// </summary>
-        public byte[] mysteryHash { private set; get; }
+        public byte[] mysteryHash { set; get; }
         /// <summary>
         /// 0x18 - 0x28 bytes; data00XX.bin save MD5
         /// </summary>
@@ -66,6 +66,38 @@ namespace Yoshitsune.Struct
             Array.Copy(this.contents, 8, this.mysteryHash, 0, 16);
             Array.Copy(this.contents, 8 + 16, this.saveFileHash, 0, 16);
             Array.Copy(this.contents, 8 + 16 + 16, this.sdSlotData, 0, 844);
+        }
+
+        /// <summary>
+        /// Load binslot reader/writer with a byte array input
+        /// </summary>
+        /// <param name="originalBuffer">byte array of sdslot/binslot</param>
+        /// <param name="steamHeaders">Parse the byte array as a Steam version (true, default) or Vita version (false)</param>
+        public Binslot(byte[] originalBuffer, bool steamHeaders = true)
+        {
+            this.contents = originalBuffer;
+
+            this.head = new byte[8];
+            this.mysteryHash = new byte[16];
+            this.saveFileHash = new byte[16];
+            this.sdSlotData = new byte[844];
+
+            if (steamHeaders)
+            {
+                // If the provided file has Steam version header
+                Array.Copy(this.contents, 0, this.head, 0, 8);
+                Array.Copy(this.contents, 8, this.mysteryHash, 0, 16);
+                Array.Copy(this.contents, 8 + 16, this.saveFileHash, 0, 16);
+                Array.Copy(this.contents, 8 + 16 + 16, this.sdSlotData, 0, 844);
+            }
+            else 
+            {
+                // If the provided buffer is from sdslot.bin (Vita) or something else without the Steam version header
+                Array.Copy(new byte[] { 0x53, 0x41, 0x56, 0x45, 0x30, 0x30, 0x30, 0x31 }, 0, this.head, 0, 8); // SAVE0001
+                Array.Copy(new byte[] { }, 0, this.mysteryHash, 0, 0); // Empty hash
+                Array.Copy(new byte[] { }, 0, this.saveFileHash, 0, 0); // Empty hash
+                Array.Copy(this.contents, 0, this.sdSlotData, 0, 844);
+            }
         }
 
         /// <summary>
@@ -108,10 +140,6 @@ namespace Yoshitsune.Struct
         public byte[] calculateMysteryHash()
         {
             byte[] calcluation;
-            //Array.Copy(this.sdSlotData, 0, calcluation, this.wtfMagic.Length, this.sdSlotData.Length);
-            //Array.Copy(this.sdSlotData, 0, calcluation, 0, this.sdSlotData.Length);
-            //Array.Copy(this.wtfMagic, 0, calcluation, 0, this.wtfMagic.Length);
-            //Array.Copy(this.wtfMagic, 0, calcluation, this.sdSlotData.Length, this.wtfMagic.Length);
 
             MemoryStream ms = new MemoryStream();
             ms.Write(this.sdSlotData, 0, this.sdSlotData.Length);

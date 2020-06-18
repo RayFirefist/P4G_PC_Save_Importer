@@ -6,7 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\P4G_PC_Save_Importer\P4G_PC_Save_Importer.csproj" />
+    <PackageReference Include="System.Collections.NonGeneric" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Yoshitsune\Yoshitsune.csproj" />
   </ItemGroup>
 
 </Project>
